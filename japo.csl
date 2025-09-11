@@ -14,7 +14,7 @@
     <category field="humanities"/>
     <category field="philosophy"/>
     <summary>Zitationsstil nach den Vorgaben des Fachbereichs Japanologie der phil. Fakultät der Universität zu Köln</summary>
-    <updated>2025-02-20T20:50:00+00:00</updated>
+    <updated>2025-09-11T20:50:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
   <locale xml:lang="en-US">
@@ -96,15 +96,26 @@
   <macro name="title">
     <choose>
       <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
-        <text variable="title" font-style="italic" text-case="title"/>
-        <!--original-title can be set in the extra section of the Zotero GUI. It is meant for
-        non-transcribed titles of Japanese works-->
-        <text variable="original-title" />
+        <group delimiter=" ">
+          <text variable="title" font-style="italic" text-case="title"/>
+          <!--original-title can be set in the extra section of the Zotero GUI. It is meant for
+          non-transcribed titles of Japanese works-->
+          <text variable="original-title" />
+        </group>
       </if>
       <else>
-        <text variable="title" quotes="true" text-case="title"/>
+        <group delimiter=" ">
+          <text variable="title" text-case="title" quotes="true"/>
+          <!--<text variable="original-title" />-->
+        </group>
       </else>
     </choose>
+  </macro>
+  <macro name="container-title">
+    <group delimiter=" ">
+      <text variable="container-title" font-style="italic" text-case="title" />
+      <text variable="original-title" />
+    </group>
   </macro>
   <macro name="publisher">
     <choose>
@@ -175,26 +186,27 @@
     <choose>
       <if type="bill book graphic legal_case legislation manuscript motion_picture song thesis report" match="any">
         <text macro="legal_case"/>
-        <group prefix=" " delimiter=" ">
-          <text macro="title" suffix=""/>
-          <group delimiter="; " prefix="(" suffix=").">
+        <group prefix=" ">
+          <text macro="title" />
+          <group delimiter="; " prefix=" (" suffix=")">
             <text macro="edition"/>
             <text macro="series-number"/>
           </group>
-          <text macro="publisher"/>
+          <text macro="publisher" prefix=". "/>
           <date variable="issued" prefix=" (" suffix=").">
             <date-part name="year"/>
           </date>
         </group>
       </if>
+      <!--For book parts; journal articles below!-->
       <else-if type="chapter paper-conference" match="any">
         <text macro="title" prefix=" " suffix="."/>
-        <group prefix=" " delimiter=" ">
-          <text term="in" text-case="capitalize-first" suffix=":"/>
-          <text macro="editor" suffix=":"/>
-          <text variable="container-title" font-style="italic" text-case="title" suffix="."/>
-          <text macro="series-number" prefix="(" suffix=")."/>
-          <group>
+        <group prefix=" ">
+          <text term="in" text-case="capitalize-first" suffix=": "/>
+          <text macro="editor" suffix=": "/>
+          <text macro="container-title" />
+          <text macro="series-number" prefix=" (" suffix=")"/>
+          <group prefix=". ">
             <text macro="publisher"/>
             <date variable="issued" prefix=" (" suffix=")">
               <date-part name="year"/>
@@ -210,12 +222,14 @@
         <group prefix=" " delimiter=" ">
           <text term="in" text-case="capitalize-first" suffix=":"/>
           <text macro="editor" suffix=":"/>
-          <text variable="container-title" font-style="italic" suffix=","/>
+          <text macro="container-title" suffix=","/>
           <group prefix=" ">
             <label variable="volume" form="short"/>
             <text variable="volume" prefix=" "/>
-            <label variable="issue" form="short" prefix=", "/>
-            <text variable="issue" prefix=" "/>
+            <group prefix=", " delimiter=" ">
+              <label variable="issue" form="short"/>
+              <text variable="issue"/>
+            </group>
           </group>
           <date variable="issued" prefix=" (" suffix=")">
             <date-part name="year"/>
