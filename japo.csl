@@ -97,6 +97,9 @@
     <choose>
       <if type="bill book graphic legal_case legislation motion_picture report song" match="any">
         <text variable="title" font-style="italic" text-case="title"/>
+        <!--original-title can be set in the extra section of the Zotero GUI. It is meant for
+        non-transcribed titles of Japanese works-->
+        <text variable="original-title" />
       </if>
       <else>
         <text variable="title" quotes="true" text-case="title"/>
