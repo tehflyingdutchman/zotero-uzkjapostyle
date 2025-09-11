@@ -22,5 +22,9 @@ original-title: [Title in kanji]
 
 That way, all kanji should be displayed correctly. Note: The `original-title` field refers to the *book title*, not the chapter title, when a single chapter is cited.
 
+### In-text citations
+
+In-text citations should be in footnotes. The footnotes themselves have to be added manually, but the citations can be inserted into the footnote the usual way through the Zotero plugin. The full bibliography entry is displayed for the first citation, subsequent citations are generated as `AUTHOR: TITLE [KANJI-TITLE], S. PAGE`. 
+
 ## License
 This citation style is published under the Creative Commons Attribution-ShareAlike 3.0 Unported license, obtainable from https://creativecommons.org/licenses/by-sa/3.0/. It is originally based on the APSA citation style for Zotero by Julian Onions et al. (http://www.zotero.org/styles/american-political-science-association), also published under the CC-BY-SA 3.0, though most of it has been replaced.
