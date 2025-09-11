@@ -9,4 +9,4 @@ This is a Zotero citation style `.csl` file for use by students at the departmen
 The `.csl` file can be downloaded and added to Zotero using `Bearbeiten > Einstellungen > Zitieren > +`. Once completed, it will be uploaded to the Zotero Style Repository. 
 
 ## License
-This citation style is published under the Creative Commons Attribution-ShareAlike 3.0 Unported license, obtainable from https://creativecommons.org/licenses/by-sa/3.0/, for compatibility with the Zotero Style Repository licensing model.
+This citation style is published under the Creative Commons Attribution-ShareAlike 3.0 Unported license, obtainable from https://creativecommons.org/licenses/by-sa/3.0/. It is originally based on the APSA citation style for Zotero by Julian Onions et al. (http://www.zotero.org/styles/american-political-science-association), though most of it has been replaced.
