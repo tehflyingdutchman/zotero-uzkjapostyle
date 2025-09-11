@@ -103,13 +103,6 @@
       </else>
     </choose>
   </macro>
-  <!--macro name="legal_case">
-    <group prefix=" " delimiter=" ">
-      <text variable="volume"/>
-      <text variable="container-title"/>
-    </group>
-    <text variable="authority" prefix=" (" suffix=")"/>
-  </macro-->
   <macro name="publisher">
     <choose>
       <if type="thesis" match="none">
