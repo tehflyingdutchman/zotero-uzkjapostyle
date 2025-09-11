@@ -12,7 +12,7 @@ The `.csl` file can be downloaded and added to Zotero using `Bearbeiten > Einste
 
 ### Kanji for Japanese works
 
-In general, Japanese symbols can be added appended the respective field, for example: Author's full name in kanji after transcribed first name, such as `Yamato, Nadeshiko 大和撫子`. This is also true for article titles, and most fields in general.
+In general, Japanese symbols can be appended to the respective field, for example: Author's full name in kanji after transcribed first name, such as `Yamato, Nadeshiko 大和撫子`. This is also true for article titles, and most fields in general.
 
 Book titles and journal names are formatted *in cursive*. Japanese symbols should **never** be cursive. Therefore, don't append kanji after the transcription of book titles and journal titles. Instead, add the following to the `Extra` section at the bottom:
 
